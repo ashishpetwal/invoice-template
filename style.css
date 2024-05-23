@@ -15,7 +15,7 @@ body {
 }
 .header {
   text-align: center;
-  border-bottom: 2px solid #27ae60;
+  border-bottom: 2px solid #0f0f0f;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
@@ -25,7 +25,7 @@ body {
 }
 .header h1 {
   margin: 0;
-  color: #27ae60;
+  color: #0f0f0f;
   font-size: 24px;
 }
 .header h2 {
@@ -45,7 +45,7 @@ body {
 .details div span {
   font-weight: bold;
   display: block;
-  color: #27ae60;
+  color: #0f0f0f;
 }
 .items {
   width: 100%;
@@ -62,7 +62,7 @@ body {
   border-bottom: 1px solid #eee;
 }
 .items th {
-  background: #27ae60;
+  background: #0f0f0f;
   color: #fff;
 }
 .items tr:nth-child(even) {
@@ -86,7 +86,7 @@ body {
   text-align: center;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 2px solid #27ae60;
+  border-top: 2px solid #0f0f0f;
 }
 .footer p {
   margin: 5px 0;
@@ -97,7 +97,7 @@ body {
   width: 200px;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #27ae60;
+  background-color: #0f0f0f;
   color: #fff;
   text-align: center;
   text-decoration: none;
