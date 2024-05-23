@@ -1,70 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container" id="invoice">
-        <div class="header">
-            <img src="https://zeokart-storage.b-cdn.net/banners/1710159562792.png" alt="ZeoCart Logo">
-            <h1>Order Successfully Placed</h1>
-            <h2>Zeocart.com</h2>
+  </head>
+  <style>
+    @media (max-width: 768px) {
+      .details div {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 475px) {
+      .items table {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+      }
+    }
+  </style>
+  <body
+    style="
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    "
+  >
+    <div
+      class="container"
+      id="invoice"
+      style="
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div
+        class="header"
+        style="
+          text-align: center;
+          border-bottom: 2px solid #0f0f0f;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+        "
+      >
+        <img
+          src="https://zeokart-storage.b-cdn.net/banners/1710159562792.png"
+          alt="ZeoCart Logo"
+          style="max-width: 150px; margin-bottom: 10px"
+        />
+        <h1 style="margin: 0; color: #0f0f0f; font-size: 24px">
+          Order Successfully Placed
+        </h1>
+        <h2 style="margin: 5px 0 0 0; font-size: 18px; color: #555">
+          Zeocart.com
+        </h2>
+      </div>
+      <div
+        class="details"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between"
+      >
+        <div style="width: 48%; margin-bottom: 10px">
+          <span style="font-weight: bold; display: block; color: #0f0f0f"
+            >Name:</span
+          >
+          John Doe
         </div>
-        <div class="details">
-            <div><span>Name:</span> John Doe</div>
-            <div><span>Mobile Number:</span> +1234567890</div>
-            <div><span>Email:</span> john.doe@example.com</div>
-            <div><span>Address:</span> 123 Street Name, City, State, 12345</div>
-            <div><span>Order ID:</span> 123456</div>
+        <div style="width: 48%; margin-bottom: 10px">
+          <span style="font-weight: bold; display: block; color: #0f0f0f"
+            >Mobile Number:</span
+          >
+          +1234567890
         </div>
-        <div class="items">
-            <h3>Items</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item Name</th>
-                        <th>MRP</th>
-                        <th>Selling Price</th>
-                        <th>Off</th>
-                        <th>Discount</th>
-                        <th>Total Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Item 1</td>
-                        <td>&#8377;100</td>
-                        <td>&#8377;80</td>
-                        <td>20%</td>
-                        <td>&#8377;20</td>
-                        <td>&#8377;80</td>
-                    </tr>
-                    <tr>
-                        <td>Item 2</td>
-                        <td>&#8377;50</td>
-                        <td>&#8377;45</td>
-                        <td>10%</td>
-                        <td>&#8377;5</td>
-                        <td>&#8377;45</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div style="width: 48%; margin-bottom: 10px">
+          <span style="font-weight: bold; display: block; color: #0f0f0f"
+            >Email:</span
+          >
+          john.doe@example.com
         </div>
-        <div class="summary">
-            <div><span>Total Amount:</span> &#8377;125</div>
-            <div><span>Payment Method:</span> Cash on Delivery (COD)</div>
-            <div><span>Delivery Method:</span> Prepaid Order Delivery (POD)</div>
+        <div style="width: 48%; margin-bottom: 10px">
+          <span style="font-weight: bold; display: block; color: #0f0f0f"
+            >Address:</span
+          >
+          123 Street Name, City, State, 12345
         </div>
-        <div class="footer">
-            <p>Team Zeocart.com</p>
-            <p>Powered by JIORE MOBILE PRIVATE LIMITED</p>
-            <p>Address: C/9 Street 4 Aram Park Delhi 110031</p>
-            <p>CIN NUMBER OF COMPANY: U52335DL2020PTC370379</p>
+        <div style="width: 48%; margin-bottom: 10px">
+          <span style="font-weight: bold; display: block; color: #0f0f0f"
+            >Order ID:</span
+          >
+          123456
         </div>
+      </div>
+      <div class="items" style="width: 100%; margin-top: 20px">
+        <h3 style="margin-bottom: 10px">Items</h3>
+        <table style="width: 100%; border-collapse: collapse">
+          <thead>
+            <tr>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                Item Name
+              </th>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                MRP
+              </th>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                Selling Price
+              </th>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                Off
+              </th>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                Discount
+              </th>
+              <th
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                  background: #0f0f0f;
+                  color: #fff;
+                "
+              >
+                Total Amount
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: #f9f9f9">
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                Item 1
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;100
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;80
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                20%
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;20
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;80
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                Item 2
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;50
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;45
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                10%
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;5
+              </td>
+              <td
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  border-bottom: 1px solid #eee;
+                "
+              >
+                &#8377;45
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="summary"
+        style="
+          margin-top: 20px;
+          padding: 20px;
+          background: #f9f9f9;
+          border-radius: 10px;
+        "
+      >
+        <div
+          style="display: flex; justify-content: space-between; padding: 5px 0"
+        >
+          <span style="font-weight: bold">Total Amount:</span> &#8377;125
+        </div>
+        <div
+          style="display: flex; justify-content: space-between; padding: 5px 0"
+        >
+          <span style="font-weight: bold">Payment Method:</span> Cash on
+          Delivery (COD)
+        </div>
+        <div
+          style="display: flex; justify-content: space-between; padding: 5px 0"
+        >
+          <span style="font-weight: bold">Delivery Method:</span> Prepaid Order
+          Delivery (POD)
+        </div>
+      </div>
+      <div
+        class="footer"
+        style="
+          text-align: center;
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 2px solid #0f0f0f;
+        "
+      >
+        <p style="margin: 5px 0; color: #555">Team Zeocart.com</p>
+        <p style="margin: 5px 0; color: #555">
+          Powered by JIORE MOBILE PRIVATE LIMITED
+        </p>
+        <p style="margin: 5px 0; color: #555">
+          Address: C/9 Street 4 Aram Park Delhi 110031
+        </p>
+        <p style="margin: 5px 0; color: #555">
+          CIN NUMBER OF COMPANY: U52335DL2020PTC370379
+        </p>
+      </div>
     </div>
-    <a class="download-btn">Download PDF</a>
-</body>
+    <a
+      class="download-btn"
+      style="
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #0f0f0f;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      "
+      >Download PDF</a
+    >
+  </body>
 </html>
