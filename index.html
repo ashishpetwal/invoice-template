@@ -3,353 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invoice</title>
-  </head>
-  <style>
-    @media (max-width: 768px) {
-      .details div {
-        width: 100%;
-      }
-    }
+    <title>Order Confirmation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-    @media (max-width: 475px) {
-      .items table {
-        overflow-x: auto;
-        display: block;
-        white-space: nowrap;
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+        color: #1a202c;
+        margin: 0;
+        padding: 0;
+        max-width: 40rem;
+        margin: 0 auto;
       }
-    }
-  </style>
-  <body
-    style="
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    "
-  >
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(166, 166, 166, 0.062);
+        padding: 0 1rem;
+      }
+
+      .header p {
+        color: #4a5568;
+      }
+
+      .orderId {
+        color: black;
+        font-weight: 600;
+      }
+
+      .main {
+        padding: 1rem;
+      }
+
+      .order .heading {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .order .name {
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .order .msg {
+        color: #4a5568;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+        text-align: left;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      table thead {
+        border-bottom: 2px solid #e2e8f0;
+        font-weight: 300;
+      }
+
+      tbody tr .product {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 600;
+        max-width: 16rem;
+      }
+
+      tbody tr .product img {
+        border-radius: 0.5rem;
+        object-fit: cover;
+      }
+
+      .total {
+        text-align: right;
+        background-color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 30%;
+      }
+
+      .total span {
+        font-weight: 600;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .address {
+        background-color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 50%;
+      }
+
+      .address-heading {
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .last {
+        font-weight: 600;
+      }
+
+      .greet {
+        color: #4a5568;
+      }
+
+      footer {
+        background-color: rgba(166, 166, 166, 0.062);
+        padding: 0.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
     <div
-      class="container"
-      id="invoice"
-      style="
-        max-width: 800px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      "
+      class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 font-inter"
     >
-      <div
-        class="header"
-        style="
-          text-align: center;
-          border-bottom: 2px solid #0f0f0f;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-        "
-      >
+      <header class="header">
         <img
           src="https://zeokart-storage.b-cdn.net/banners/1710159562792.png"
-          alt="ZeoCart Logo"
-          style="max-width: 150px; margin-bottom: 10px"
+          alt="Acme Inc."
+          class="logo"
+          width="100"
         />
-        <h1 style="margin: 0; color: #0f0f0f; font-size: 24px">
-          Order Successfully Placed
-        </h1>
-        <h2 style="margin: 5px 0 0 0; font-size: 18px; color: #555">
-          Zeocart.com
-        </h2>
-      </div>
-      <div
-        class="details"
-        style="display: flex; flex-wrap: wrap; justify-content: space-between"
-      >
-        <div style="width: 48%; margin-bottom: 10px">
-          <span style="font-weight: bold; display: block; color: #0f0f0f"
-            >Name:</span
-          >
-          John Doe
+        <p>Order ID: <span class="orderId">123456</span></p>
+      </header>
+      <main class="main">
+        <div class="order">
+          <p class="heading">Woah! Your Order is Confirmed</p>
+          <p class="name">Hi, John Doe</p>
+          <p class="msg">
+            Thank You for your order. We will inform you once your order ships.
+            Please find below the reciept for your purchase.
+          </p>
         </div>
-        <div style="width: 48%; margin-bottom: 10px">
-          <span style="font-weight: bold; display: block; color: #0f0f0f"
-            >Mobile Number:</span
-          >
-          +1234567890
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="product">
+                  <img
+                    src="https://images.pexels.com/photos/9558936/pexels-photo-9558936.jpeg"
+                    alt="Product"
+                    width="50"
+                    height="50"
+                  />
+                  <p>Mobile Cover for Motorrola edge 50 pro</p>
+                </td>
+                <td>1</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td class="product">
+                  <img
+                    src="https://images.pexels.com/photos/9558936/pexels-photo-9558936.jpeg"
+                    alt="Product"
+                    width="50"
+                    height="50"
+                  />
+                  <p>Mobile Cover for Motorrola edge 50 pro</p>
+                </td>
+                <td>1</td>
+                <td>$100</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div style="width: 48%; margin-bottom: 10px">
-          <span style="font-weight: bold; display: block; color: #0f0f0f"
-            >Email:</span
-          >
-          john.doe@example.com
+        <div class="details">
+          <div class="address">
+            <p class="address-heading">Shipping Address:</p>
+            <p>John Doe, 1234 Main St, Springfield, IL 62701</p>
+          </div>
+          <div class="total">
+            <p>SubTotal: $200</p>
+            <p>Shipping: $20</p>
+            <p><span>Total: $220</span></p>
+          </div>
         </div>
-        <div style="width: 48%; margin-bottom: 10px">
-          <span style="font-weight: bold; display: block; color: #0f0f0f"
-            >Address:</span
-          >
-          123 Street Name, City, State, 12345
+        <div class="last">
+          <p class="greet">Hope to see you soon,</p>
+          <p>Zeocart.com</p>
         </div>
-        <div style="width: 48%; margin-bottom: 10px">
-          <span style="font-weight: bold; display: block; color: #0f0f0f"
-            >Order ID:</span
-          >
-          123456
+      </main>
+      <footer>
+        <div>
+          <p>© 2024 Zeocart All rights reserved.</p>
         </div>
-      </div>
-      <div class="items" style="width: 100%; margin-top: 20px">
-        <h3 style="margin-bottom: 10px">Items</h3>
-        <table style="width: 100%; border-collapse: collapse">
-          <thead>
-            <tr>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                Item Name
-              </th>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                MRP
-              </th>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                Selling Price
-              </th>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                Off
-              </th>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                Discount
-              </th>
-              <th
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                  background: #0f0f0f;
-                  color: #fff;
-                "
-              >
-                Total Amount
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f9f9f9">
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                Item 1
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;100
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;80
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                20%
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;20
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;80
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                Item 2
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;50
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;45
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                10%
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;5
-              </td>
-              <td
-                style="
-                  padding: 12px;
-                  text-align: left;
-                  border-bottom: 1px solid #eee;
-                "
-              >
-                &#8377;45
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div
-        class="summary"
-        style="
-          margin-top: 20px;
-          padding: 20px;
-          background: #f9f9f9;
-          border-radius: 10px;
-        "
-      >
-        <div
-          style="display: flex; justify-content: space-between; padding: 5px 0"
-        >
-          <span style="font-weight: bold">Total Amount:</span> &#8377;125
-        </div>
-        <div
-          style="display: flex; justify-content: space-between; padding: 5px 0"
-        >
-          <span style="font-weight: bold">Payment Method:</span> Cash on
-          Delivery (COD)
-        </div>
-        <div
-          style="display: flex; justify-content: space-between; padding: 5px 0"
-        >
-          <span style="font-weight: bold">Delivery Method:</span> Prepaid Order
-          Delivery (POD)
-        </div>
-      </div>
-      <div
-        class="footer"
-        style="
-          text-align: center;
-          margin-top: 20px;
-          padding-top: 20px;
-          border-top: 2px solid #0f0f0f;
-        "
-      >
-        <p style="margin: 5px 0; color: #555">Team Zeocart.com</p>
-        <p style="margin: 5px 0; color: #555">
-          Powered by JIORE MOBILE PRIVATE LIMITED
-        </p>
-        <p style="margin: 5px 0; color: #555">
-          Address: C/9 Street 4 Aram Park Delhi 110031
-        </p>
-        <p style="margin: 5px 0; color: #555">
-          CIN NUMBER OF COMPANY: U52335DL2020PTC370379
-        </p>
-      </div>
+      </footer>
     </div>
-    <a
-      class="download-btn"
-      style="
-        display: block;
-        width: 200px;
-        margin: 20px auto;
-        padding: 10px 20px;
-        background-color: #0f0f0f;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-      "
-      >Download PDF</a
-    >
   </body>
 </html>
